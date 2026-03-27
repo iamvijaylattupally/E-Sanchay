@@ -92,7 +92,7 @@ const summarizeExpenses = AsyncHandler(async (req, res) => {
     }
 
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const formattedExpenses = expenses.map(exp => 
         `- ${exp.title}: ₹${exp.amount} on ${exp.date ? new Date(exp.date).toDateString() : "Unknown Date"}`
